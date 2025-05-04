@@ -1,0 +1,135 @@
+-- phpMyAdmin SQL Dump
+-- version 5.2.1
+-- https://www.phpmyadmin.net/
+--
+-- Host: 127.0.0.1
+-- Tempo de geração: 04/05/2025 às 21:54
+-- Versão do servidor: 10.4.32-MariaDB
+-- Versão do PHP: 8.2.12
+
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+START TRANSACTION;
+SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
+
+--
+-- Banco de dados: `librarydb`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `book`
+--
+
+CREATE TABLE `book` (
+  `bookid` int(11) NOT NULL,
+  `bookname` varchar(255) DEFAULT NULL,
+  `author` varchar(255) DEFAULT NULL,
+  `publisher` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `book`
+--
+
+INSERT INTO `book` (`bookid`, `bookname`, `author`, `publisher`) VALUES
+(1, 'Harry Potter', 'J K Rowling', 'Bloomsday');
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `borrow`
+--
+
+CREATE TABLE `borrow` (
+  `bid` int(11) NOT NULL,
+  `studentid` int(11) DEFAULT NULL,
+  `bookid` int(11) DEFAULT NULL,
+  `date_borrowed` date DEFAULT NULL,
+  `date_return` date DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `librarian`
+--
+
+CREATE TABLE `librarian` (
+  `lid` int(11) NOT NULL,
+  `name` varchar(255) DEFAULT NULL,
+  `email` varchar(255) DEFAULT NULL,
+  `address` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estrutura para tabela `student`
+--
+
+CREATE TABLE `student` (
+  `studentid` int(11) NOT NULL,
+  `studentname` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `address` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Despejando dados para a tabela `student`
+--
+
+INSERT INTO `student` (`studentid`, `studentname`, `email`, `address`) VALUES
+(1, 'Jorge', 'jorge77@hotmail.com', 'Europe');
+
+--
+-- Índices para tabelas despejadas
+--
+
+--
+-- Índices de tabela `book`
+--
+ALTER TABLE `book`
+  ADD PRIMARY KEY (`bookid`);
+
+--
+-- Índices de tabela `borrow`
+--
+ALTER TABLE `borrow`
+  ADD PRIMARY KEY (`bid`),
+  ADD KEY `fk_book` (`bookid`),
+  ADD KEY `fk_student` (`studentid`);
+
+--
+-- Índices de tabela `librarian`
+--
+ALTER TABLE `librarian`
+  ADD PRIMARY KEY (`lid`);
+
+--
+-- Índices de tabela `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`studentid`);
+
+--
+-- Restrições para tabelas despejadas
+--
+
+--
+-- Restrições para tabelas `borrow`
+--
+ALTER TABLE `borrow`
+  ADD CONSTRAINT `fk_book` FOREIGN KEY (`bookid`) REFERENCES `book` (`bookid`),
+  ADD CONSTRAINT `fk_student` FOREIGN KEY (`studentid`) REFERENCES `student` (`studentid`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
