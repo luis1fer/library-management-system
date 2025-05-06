@@ -20,7 +20,7 @@ Este é um projeto completo de **sistema de gerenciamento de biblioteca**, desen
 - Uso de JCalendar para seleção e formatação de datas
 - Tabelas Swing vinculadas ao MySQL via JDBC
 
-## 🖼️ Diagramas (📁 `/diagramas`)
+## 🖼️ Diagramas (📁 `/diagrams`)
 
 > Os diagramas de Classes, Casos de Uso e Entidade-Relacionamento da aplicação estão na pasta 'diagramas'.
 
