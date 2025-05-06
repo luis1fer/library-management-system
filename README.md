@@ -24,6 +24,14 @@ Este é um projeto completo de **sistema de gerenciamento de biblioteca**, desen
 
 > Os diagramas de Classes, Casos de Uso e Entidade-Relacionamento da aplicação estão na pasta 'diagramas'.
 
+- **📌 Diagrama ER (Entidade-Relacionamento):**  
+  Representa visualmente o modelo de dados do banco `mylibrarydb`, evidenciando as entidades (tabelas) como `student`, `book`, `borrowing`, `librarian` e seus relacionamentos.
+
+- **📌 Diagrama de Classes (UML):**  
+  Exibe a estrutura orientada a objetos do projeto, detalhando as classes Java (`Student`, `Book`, `Borrowing`, `Librarian`, `AdminLogin`, `StudentJFrame`, etc.), seus atributos, métodos (`insert()`, `update()`, `delete()`...) e os relacionamentos entre elas.
+
+- **📌 Diagrama de Casos de Uso (Use Case):**  
+  Mostra como o administrador interage com o sistema, desde o login até o gerenciamento completo de estudantes, livros, empréstimos e bibliotecários.
 
 ## 💾 Banco de Dados (📁 `/database`)
 
@@ -39,11 +47,10 @@ Este é um projeto completo de **sistema de gerenciamento de biblioteca**, desen
 
 ## 🧪 Tecnologias Utilizadas
 
-- **Java SE 8+**
-- **Swing (NetBeans GUI Builder)**
-- **MySQL 5.7+**
-- **XAMPP (Apache + MySQL)**
-- **JDBC**
+- **Java SE (Swing / JFrame)**
+- **NetBeans IDE**
+- **MySQL (XAMPP)**
+- **JDBC (Java Database Connectivity)**
 - **JCalendar (para manipulação de datas)**
 
 ---
@@ -61,11 +68,13 @@ Este é um projeto completo de **sistema de gerenciamento de biblioteca**, desen
 
 ---
 
-## 👨‍💻 Sobre mim
+## 👨‍💻 About me
 
 Este projeto foi desenvolvido como forma de consolidar conhecimentos em Java, Swing, banco de dados relacional e boas práticas de separação de camadas e lógica. Na aba projetos do meu LinkedIn tem um vídeo aonde eu mostro o funcinamento desse projeto.
 
 📫 Contato para oportunidades: 
-Linkedin: www.linkedin.com/in/luís-f-6a0ba72a4
+- **Email:** dev.luis.contato@gmail.com
+- **LinkedIn:** (https://www.linkedin.com/in/luís-f-6a0ba72a4/)
+- **GitHub:** (https://github.com/luis1fer/)
 
 
